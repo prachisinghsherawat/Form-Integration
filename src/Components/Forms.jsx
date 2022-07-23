@@ -5,25 +5,32 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Button from '@mui/material/Button';
+
 
 export const Forms =() => {
 
-    const [age, setAge] = React.useState('');
-    const [open, setOpen] = React.useState(false);
+    const [candidateDetails , setCandidateDetails] = useState({
+        
+        candidate_name: "",
+        candidate_email: "",
+        candidate_number:  "",
+        source: "",
+        previous_organization: "",
+        referral_employee_email: "",
+        skill: "",
+        total_exp: "",
+        NP: "",
+        status: "",
+        isjoin: false,
+        offered: false,
+        dropped: false,
+    })
 
-    const handleChange = (event) => {
-        setAge(event.target.value);
-    };
+    const HandleCandidateDetails = (e) => {
 
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-    const handleOpen = () => {
-        setOpen(true);
-    };
-    
+        const {name , value} = e.target;
+        setCandidateDetails({...candidateDetails ,[name]: value})
+    }
 
     return (
       
@@ -37,12 +44,13 @@ export const Forms =() => {
     >
       <div>
 
-        <TextField id="outlined-search" label="Candidate Name" type="search" />
+        <TextField name='candidate_name' id="outlined-search" label="Candidate Name" type="search" />
 
-        <TextField id="outlined-search" label="Candidate Email" type="search" />
+        <TextField name='candidate_email' id="outlined-search" label="Candidate Email" type="search" />
         
         <TextField
           id="outlined-number"
+          name='candidate_number'
           label="Candidate Number"
           type="number"
           InputLabelProps={{
@@ -50,19 +58,19 @@ export const Forms =() => {
           }}
         />
 
-        <TextField id="outlined-search" label="Source" type="search" />
+        <TextField name='source' id="outlined-search" label="Source" type="search" />
 
-        <TextField id="outlined-search" label="Previous Organization" type="search" />
+        <TextField name='previous_organization' id="outlined-search" label="Previous Organization" type="search" />
 
-        <TextField id="outlined-search" label="Referral Employee Email" type="search" />
+        <TextField name='referral_employee_email' id="outlined-search" label="Referral Employee Email" type="search" />
 
-        <TextField id="outlined-search" label="Skill" type="search" />
+        <TextField name='skill' id="outlined-search" label="Skill" type="search" />
 
-        <TextField id="outlined-search" label="Total Experience" type="search" />
+        <TextField name='total_exp' id="outlined-search" label="Total Experience" type="search" />
 
-        <TextField id="outlined-search" label="NP" type="search" />
+        <TextField name='NP' id="outlined-search" label="NP" type="search" />
 
-        <TextField id="outlined-search" label="Status" type="search" />
+        <TextField name='status' id="outlined-search" label="Status" type="search" />
 
 
         <FormControl sx={{ m: 1, minWidth: 160 }}>
@@ -70,6 +78,7 @@ export const Forms =() => {
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
+          name='isjoin'
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
@@ -91,6 +100,7 @@ export const Forms =() => {
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
+          name='offered'
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
@@ -112,6 +122,7 @@ export const Forms =() => {
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
+          name='dropped'
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
@@ -131,6 +142,9 @@ export const Forms =() => {
       </div>
      
     </Box>
+
+
+
   );
 }
 
