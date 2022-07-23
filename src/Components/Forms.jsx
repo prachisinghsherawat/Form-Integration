@@ -27,10 +27,10 @@ export const Forms =() => {
 
     return (
       
-    <Box
+    <Box id='box'
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
+        '& .MuiTextField-root': { m: 1, width: '28ch' },
       }}
       noValidate
       autoComplete="off"
@@ -65,10 +65,8 @@ export const Forms =() => {
         <TextField id="outlined-search" label="Status" type="search" />
 
 
-        <div>
-
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-controlled-open-select-label">Age</InputLabel>
+        <FormControl sx={{ m: 1, minWidth: 160 }}>
+        <InputLabel id="demo-controlled-open-select-label">Is Join</InputLabel>
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
@@ -76,22 +74,20 @@ export const Forms =() => {
           onClose={handleClose}
           onOpen={handleOpen}
           value={age}
-          label="Age"
+          label="Is Join"
           onChange={handleChange}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={10}>True</MenuItem>
+          <MenuItem value={20}>False</MenuItem>
         </Select>
-      </FormControl>
-      </div>
+        </FormControl>
 
-      <div>
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-controlled-open-select-label">Age</InputLabel>
+
+        <FormControl sx={{ m: 1, minWidth: 160 }}>
+        <InputLabel id="demo-controlled-open-select-label">Offered</InputLabel>
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
@@ -99,18 +95,38 @@ export const Forms =() => {
           onClose={handleClose}
           onOpen={handleOpen}
           value={age}
-          label="Age"
+          label="Offered"
           onChange={handleChange}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={10}>True</MenuItem>
+          <MenuItem value={20}>False</MenuItem>
         </Select>
-      </FormControl>
-      </div>
+        </FormControl>
+
+
+        <FormControl sx={{ m: 1, minWidth: 160 }}>
+        <InputLabel id="demo-controlled-open-select-label">Dropped</InputLabel>
+        <Select
+          labelId="demo-controlled-open-select-label"
+          id="demo-controlled-open-select"
+          open={open}
+          onClose={handleClose}
+          onOpen={handleOpen}
+          value={age}
+          label="Dropped"
+          onChange={handleChange}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>True</MenuItem>
+          <MenuItem value={20}>False</MenuItem>
+        </Select>
+        </FormControl>
+      
         
       </div>
      
