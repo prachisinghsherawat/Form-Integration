@@ -9,7 +9,7 @@ import Select from '@mui/material/Select';
 
 export const Forms =() => {
 
-    const [candidateDetails , setCandidateDetails] = useState({
+    const [candidateDetails , setCandidateDetails] = React.useState({
         
         candidate_name: "",
         candidate_email: "",
@@ -31,6 +31,7 @@ export const Forms =() => {
         const {name , value} = e.target;
         setCandidateDetails({...candidateDetails ,[name]: value})
     }
+    console.log(candidateDetails)
 
     return (
       
@@ -44,33 +45,34 @@ export const Forms =() => {
     >
       <div>
 
-        <TextField name='candidate_name' id="outlined-search" label="Candidate Name" type="search" />
+        <TextField name='candidate_name' id="outlined-search" label="Candidate Name" type="search" onChange={HandleCandidateDetails} />
 
-        <TextField name='candidate_email' id="outlined-search" label="Candidate Email" type="search" />
+        <TextField name='candidate_email' id="outlined-search" label="Candidate Email" type="search" onChange={HandleCandidateDetails}  />
         
         <TextField
           id="outlined-number"
           name='candidate_number'
           label="Candidate Number"
           type="number"
+          onChange={HandleCandidateDetails} 
           InputLabelProps={{
             shrink: true,
           }}
         />
 
-        <TextField name='source' id="outlined-search" label="Source" type="search" />
+        <TextField name='source' id="outlined-search" label="Source" type="search" onChange={HandleCandidateDetails}  />
 
-        <TextField name='previous_organization' id="outlined-search" label="Previous Organization" type="search" />
+        <TextField name='previous_organization' id="outlined-search" label="Previous Organization" type="search" onChange={HandleCandidateDetails}  />
 
-        <TextField name='referral_employee_email' id="outlined-search" label="Referral Employee Email" type="search" />
+        <TextField name='referral_employee_email' id="outlined-search" label="Referral Employee Email" type="search" onChange={HandleCandidateDetails}  />
 
-        <TextField name='skill' id="outlined-search" label="Skill" type="search" />
+        <TextField name='skill' id="outlined-search" label="Skill" type="search" onChange={HandleCandidateDetails}  />
 
-        <TextField name='total_exp' id="outlined-search" label="Total Experience" type="search" />
+        <TextField name='total_exp' id="outlined-search" label="Total Experience" type="search" onChange={HandleCandidateDetails}  />
 
-        <TextField name='NP' id="outlined-search" label="NP" type="search" />
+        <TextField name='NP' id="outlined-search" label="NP" type="search" onChange={HandleCandidateDetails} />
 
-        <TextField name='status' id="outlined-search" label="Status" type="search" />
+        <TextField name='status' id="outlined-search" label="Status" type="search" onChange={HandleCandidateDetails} />
 
 
         <FormControl sx={{ m: 1, minWidth: 160 }}>
@@ -79,18 +81,15 @@ export const Forms =() => {
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
           name='isjoin'
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={age}
+          defaultValue={candidateDetails.isjoin}
           label="Is Join"
-          onChange={handleChange}
+          onChange={HandleCandidateDetails} 
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>True</MenuItem>
-          <MenuItem value={20}>False</MenuItem>
+          <MenuItem value={true}>True</MenuItem>
+          <MenuItem value={false}>False</MenuItem>
         </Select>
         </FormControl>
 
@@ -100,19 +99,16 @@ export const Forms =() => {
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
+          defaultValue={candidateDetails.offered}
           name='offered'
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={age}
           label="Offered"
-          onChange={handleChange}
+          onChange={HandleCandidateDetails} 
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>True</MenuItem>
-          <MenuItem value={20}>False</MenuItem>
+          <MenuItem value={true}>True</MenuItem>
+          <MenuItem value={false}>False</MenuItem>
         </Select>
         </FormControl>
 
@@ -122,19 +118,16 @@ export const Forms =() => {
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
+          defaultValue={candidateDetails.dropped}
           name='dropped'
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={age}
           label="Dropped"
-          onChange={handleChange}
+          onChange={HandleCandidateDetails} 
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>True</MenuItem>
-          <MenuItem value={20}>False</MenuItem>
+          <MenuItem value={true}>True</MenuItem>
+          <MenuItem value={false}>False</MenuItem>
         </Select>
         </FormControl>
       
