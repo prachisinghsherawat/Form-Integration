@@ -145,7 +145,7 @@ export const Forms =() => {
 
         <Stack spacing={2} direction="row">
 
-          <Button onClick={SubmitFormDetails} variant="contained">Contained</Button>
+          <Button onClick={SubmitFormDetails} variant="contained">Submit</Button>
           
         </Stack>
       

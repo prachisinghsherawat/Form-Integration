@@ -1,3 +1,20 @@
 {
-  "candidateDetails" : []
+  "candidateDetails": [
+    {
+      "candidate_name": "Prachi Singh",
+      "candidate_email": "pravbcndnm,",
+      "candidate_number": "345678908765",
+      "source": "na",
+      "previous_organization": "na",
+      "referral_employee_email": "na",
+      "skill": "na",
+      "total_exp": "9",
+      "NP": "na",
+      "status": "na",
+      "isjoin": true,
+      "offered": true,
+      "dropped": false,
+      "id": 1
+    }
+  ]
 }
