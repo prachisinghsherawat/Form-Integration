@@ -5,6 +5,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 
 export const Forms =() => {
@@ -33,8 +35,13 @@ export const Forms =() => {
     }
     console.log(candidateDetails)
 
-    return (
+
+    const SubmitFormDetails = () => {
+
       
+    }
+
+    return (     
     <Box id='box'
       component="form"
       sx={{
@@ -130,6 +137,15 @@ export const Forms =() => {
           <MenuItem value={false}>False</MenuItem>
         </Select>
         </FormControl>
+
+
+        {/* ----------------------------- Button ----------------------------------- */}
+
+        <Stack spacing={2} direction="row">
+
+          <Button onClick={} variant="contained">Contained</Button>
+          
+        </Stack>
       
         
       </div>
@@ -140,6 +156,8 @@ export const Forms =() => {
 
   );
 }
+
+
 
 
 
