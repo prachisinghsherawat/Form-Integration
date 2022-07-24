@@ -7,6 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import axios from 'axios';
 
 
 export const Forms =() => {
@@ -30,15 +31,16 @@ export const Forms =() => {
 
     const HandleCandidateDetails = (e) => {
 
-        const {name , value} = e.target;
-        setCandidateDetails({...candidateDetails ,[name]: value})
+      const {name , value} = e.target;
+      setCandidateDetails({...candidateDetails ,[name]: value})
+
     }
-    console.log(candidateDetails)
 
 
     const SubmitFormDetails = () => {
 
-      
+      axios.post("http://localhost:3000/candidateDetails",candidateDetails)
+
     }
 
     return (     
@@ -143,7 +145,7 @@ export const Forms =() => {
 
         <Stack spacing={2} direction="row">
 
-          <Button onClick={} variant="contained">Contained</Button>
+          <Button onClick={SubmitFormDetails} variant="contained">Contained</Button>
           
         </Stack>
       
