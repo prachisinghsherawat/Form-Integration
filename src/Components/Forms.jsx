@@ -12,8 +12,7 @@ import axios from 'axios';
 
 export const Forms =() => {
 
-    const [candidateDetails , setCandidateDetails] = React.useState({
-        
+    const [candidateDetails , setCandidateDetails] = React.useState({        
         candidate_name: "",
         candidate_email: "",
         candidate_number:  "",
